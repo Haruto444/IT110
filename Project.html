@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to My Website</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #080e20;
+            color: white;
+            min-height: 100vh;
+        }
+
+        .hero {
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            background:
+                linear-gradient(
+                    rgba(5, 12, 30, 0.48),
+                    rgba(5, 12, 30, 0.25)
+                ),
+                url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=2000&q=85')
+                center / cover no-repeat;
+        }
+
+        nav {
+            width: 100%;
+            max-width: 1250px;
+            margin: auto;
+            padding: 28px 35px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: #48c6ff;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 35px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #48c6ff;
+        }
+
+        .welcome {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 60px 24px 100px;
+            animation: fadeIn 1.2s ease;
+        }
+
+        .tagline {
+            color: #65caff;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 6px;
+            margin-bottom: 22px;
+        }
+
+        h1 {
+            font-size: clamp(52px, 9vw, 105px);
+            font-weight: 800;
+            letter-spacing: -5px;
+            line-height: 1.1;
+            margin-bottom: 24px;
+        }
+
+        h1 span {
+            background: linear-gradient(90deg, #45caff, #a879ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .description {
+            max-width: 580px;
+            color: #e0e8ff;
+            font-size: 17px;
+            line-height: 1.8;
+            margin-bottom: 35px;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            padding: 17px 30px;
+            border-radius: 50px;
+            background: linear-gradient(100deg, #20b9f4, #3975ff);
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+            box-shadow: 0 8px 30px rgba(39, 140, 255, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(39, 140, 255, 0.5);
+        }
+
+        .button span {
+            font-size: 22px;
+            transition: transform 0.3s;
+        }
+
+        .button:hover span {
+            transform: translateX(5px);
+        }
+
+        .bottom-text {
+            position: absolute;
+            bottom: 25px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            color: #d3def5;
+            font-size: 11px;
+            letter-spacing: 3px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 600px) {
+            nav {
+                padding: 22px;
+            }
+
+            .logo {
+                font-size: 21px;
+            }
+
+            .nav-links {
+                gap: 14px;
+            }
+
+            .nav-links a {
+                font-size: 11px;
+            }
+
+            h1 {
+                font-size: clamp(48px, 12vw, 70px);
+                letter-spacing: -3px;
+            }
+
+            .tagline {
+                font-size: 11px;
+                letter-spacing: 4px;
+            }
+
+            .description {
+                font-size: 15px;
+            }
+
+            .button {
+                padding: 15px 25px;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .nav-links {
+                gap: 9px;
+            }
+
+            .nav-links a {
+                font-size: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="hero" id="home">
+
+        <nav>
+            <div class="logo">My<span>Site.</span></div>
+
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+
+        <main class="welcome">
+            <p class="tagline">HELLO THERE</p>
+
+            <h1>Welcome<span>!</span></h1>
+
+            <p class="description">
+                Thanks for visiting my page. I'm excited to share
+                my work, my journey, and the things I'm passionate about.
+                Take a look around and discover something new.
+            </p>
+
+            <a href="#about" class="button">
+                Explore More <span>→</span>
+            </a>
+        </main>
+
+        <div class="bottom-text">
+            &copy; 2026 MYSITE. ALL RIGHTS RESERVED.
+        </div>
+
+    </section>
+
+    <section id="about" style="padding: 100px 25px; text-align: center;">
+        <h2>About This Website</h2>
+        <p style="margin-top: 15px; color: #aab8d4;">
+            A little space to share ideas, creativity, and projects.
+        </p>
+    </section>
+
+    <section id="projects" style="padding: 60px 25px; text-align: center;">
+        <h2>My Projects</h2>
+        <p style="margin-top: 15px; color: #aab8d4;">
+            More exciting things are coming soon.
+        </p>
+    </section>
+
+    <section id="contact" style="padding: 60px 25px; text-align: center;">
+        <h2>Contact</h2>
+        <p style="margin-top: 15px; color: #aab8d4;">
+            Thanks for stopping by!
+        </p>
+    </section>
+</body>
+</html>
