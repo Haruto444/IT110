@@ -1,13 +1,15 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to My Website</title>
+
+    <title>Our Team | Portfolio</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<!-- Git test -->
+
     <style>
         * {
             margin: 0;
@@ -17,6 +19,7 @@
 
         html {
             scroll-behavior: smooth;
+            scroll-padding-top: 90px;
         }
 
         body {
@@ -24,37 +27,31 @@
             background: #080e20;
             color: white;
             min-height: 100vh;
+            line-height: 1.6;
         }
 
-        .hero {
-            min-height: 100vh;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-            background:
-                linear-gradient(
-                    rgba(5, 12, 30, 0.48),
-                    rgba(5, 12, 30, 0.25)
-                ),
-                url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=2000&q=85')
-                center / cover no-repeat;
-        }
+        /* NAVIGATION */
 
         nav {
             width: 100%;
-            max-width: 1250px;
-            margin: auto;
-            padding: 28px 35px;
+            padding: 20px 6%;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 20px;
+            background: rgba(8, 14, 32, 0.95);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(12px);
         }
 
         .logo {
-            font-size: 25px;
+            font-size: 24px;
             font-weight: 800;
             letter-spacing: -1px;
+            white-space: nowrap;
         }
 
         .logo span {
@@ -63,13 +60,15 @@
 
         .nav-links {
             display: flex;
-            gap: 35px;
+            flex-wrap: wrap;
+            gap: 25px;
         }
 
         .nav-links a {
-            color: white;
+            color: #dce5fa;
             text-decoration: none;
-            font-size: 14px;
+            font-size: 13px;
+            font-weight: 500;
             transition: color 0.3s;
         }
 
@@ -77,202 +76,787 @@
             color: #48c6ff;
         }
 
-        .welcome {
-            flex: 1;
+        /* HERO SECTION */
+
+        .hero {
+            min-height: 85vh;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 60px 24px 100px;
-            animation: fadeIn 1.2s ease;
+            padding: 90px 24px;
+            background:
+                linear-gradient(
+                    rgba(5, 12, 30, 0.55),
+                    rgba(5, 12, 30, 0.82)
+                ),
+                url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=2000&q=85')
+                center / cover no-repeat;
+        }
+
+        .hero-content {
+            max-width: 850px;
+            animation: fadeIn 1s ease;
         }
 
         .tagline {
             color: #65caff;
-            font-size: 13px;
+            font-size: 12px;
             font-weight: 700;
-            letter-spacing: 6px;
-            margin-bottom: 22px;
+            letter-spacing: 5px;
+            margin-bottom: 20px;
         }
 
         h1 {
-            font-size: clamp(52px, 9vw, 105px);
+            font-size: clamp(45px, 8vw, 85px);
             font-weight: 800;
-            letter-spacing: -5px;
+            letter-spacing: -4px;
             line-height: 1.1;
-            margin-bottom: 24px;
+            margin-bottom: 25px;
         }
 
-        h1 span {
+        h1 span,
+        .gradient-text {
             background: linear-gradient(90deg, #45caff, #a879ff);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
         }
 
-        .description {
-            max-width: 580px;
+        .hero-description {
+            max-width: 650px;
+            margin: 0 auto 32px;
             color: #e0e8ff;
-            font-size: 17px;
-            line-height: 1.8;
-            margin-bottom: 35px;
+            font-size: 16px;
+            line-height: 1.9;
         }
 
         .button {
             display: inline-flex;
+            justify-content: center;
             align-items: center;
-            gap: 15px;
-            padding: 17px 30px;
+            gap: 12px;
+            padding: 15px 26px;
             border-radius: 50px;
             background: linear-gradient(100deg, #20b9f4, #3975ff);
             color: white;
             text-decoration: none;
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 600;
-            box-shadow: 0 8px 30px rgba(39, 140, 255, 0.3);
+            box-shadow: 0 8px 30px rgba(39, 140, 255, 0.25);
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 40px rgba(39, 140, 255, 0.5);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 35px rgba(39, 140, 255, 0.4);
         }
 
         .button span {
-            font-size: 22px;
-            transition: transform 0.3s;
+            font-size: 20px;
         }
 
-        .button:hover span {
-            transform: translateX(5px);
+        .button-outline {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            padding: 12px 20px;
+            border: 1px solid #48c6ff;
+            border-radius: 30px;
+            color: #65caff;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            transition: background 0.3s, color 0.3s;
         }
 
-        .bottom-text {
-            position: absolute;
-            bottom: 25px;
-            left: 0;
-            right: 0;
+        .button-outline:hover {
+            background: #48c6ff;
+            color: #080e20;
+        }
+
+        /* GENERAL SECTIONS */
+
+        .section {
+            padding: 90px 6%;
+        }
+
+        .section-heading {
+            max-width: 700px;
+            margin: 0 auto 45px;
             text-align: center;
-            color: #d3def5;
-            font-size: 11px;
-            letter-spacing: 3px;
         }
+
+        .section-label {
+            color: #65caff;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            margin-bottom: 12px;
+        }
+
+        .section-heading h2 {
+            font-size: clamp(30px, 5vw, 44px);
+            font-weight: 800;
+            letter-spacing: -1.5px;
+            margin-bottom: 15px;
+        }
+
+        .section-heading p {
+            color: #aab8d4;
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        /* ABOUT THE PROJECT */
+
+        .about {
+            background: #0b1329;
+        }
+
+        .project-content {
+            max-width: 900px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 30px;
+            align-items: stretch;
+        }
+
+        .project-description,
+        .goal-card {
+            padding: 32px;
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.035);
+        }
+
+        .project-description h3,
+        .goal-card h3 {
+            font-size: 21px;
+            margin-bottom: 15px;
+        }
+
+        .project-description p,
+        .goal-card p {
+            color: #aab8d4;
+            font-size: 14px;
+            line-height: 1.9;
+        }
+
+        .goal-card {
+            background: linear-gradient(
+                145deg,
+                rgba(32, 185, 244, 0.1),
+                rgba(168, 121, 255, 0.1)
+            );
+        }
+
+        .goal-icon {
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        /* TEAM MEMBERS */
+
+        .team-grid {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 25px;
+        }
+
+        .member-card {
+            background: #101a34;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .member-card:hover {
+            transform: translateY(-7px);
+            border-color: rgba(72, 198, 255, 0.6);
+        }
+
+        .member-photo {
+            width: 100%;
+            height: 260px;
+            display: block;
+            object-fit: cover;
+            background: #172541;
+        }
+
+        .member-info {
+            padding: 25px;
+        }
+
+        .member-number {
+            color: #65caff;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .member-info h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .member-role {
+            color: #b49aff;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .member-bio {
+            min-height: 100px;
+            color: #aab8d4;
+            font-size: 13px;
+            line-height: 1.8;
+            margin-bottom: 22px;
+        }
+
+        .member-info .button-outline {
+            width: 100%;
+        }
+
+        /* INDIVIDUAL PROFILE SECTIONS */
+
+        .profile-section {
+            padding: 80px 6%;
+            background: #0b1329;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .profile-content {
+            max-width: 950px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 45px;
+            align-items: center;
+        }
+
+        .profile-photo {
+            width: 100%;
+            aspect-ratio: 4 / 5;
+            object-fit: cover;
+            border-radius: 20px;
+            border: 1px solid rgba(72, 198, 255, 0.3);
+        }
+
+        .profile-details h2 {
+            font-size: clamp(30px, 5vw, 42px);
+            line-height: 1.2;
+            margin-bottom: 12px;
+        }
+
+        .profile-details p {
+            color: #aab8d4;
+            font-size: 14px;
+            line-height: 1.9;
+            margin-bottom: 20px;
+        }
+
+        .profile-details .member-role {
+            margin-bottom: 15px;
+        }
+
+        /* MAIN APPLICATION */
+
+        .application {
+            text-align: center;
+            padding: 100px 24px;
+            background:
+                radial-gradient(
+                    ellipse at top,
+                    rgba(45, 101, 200, 0.22),
+                    transparent 65%
+                ),
+                #080e20;
+        }
+
+        .application-content {
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .application h2 {
+            font-size: clamp(32px, 6vw, 48px);
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .application p {
+            color: #aab8d4;
+            font-size: 15px;
+            line-height: 1.9;
+            margin-bottom: 30px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            padding: 25px;
+            text-align: center;
+            background: #060b18;
+            color: #8492af;
+            font-size: 11px;
+            letter-spacing: 1px;
+        }
+
+        /* ANIMATION */
 
         @keyframes fadeIn {
             from {
                 opacity: 0;
-                transform: translateY(25px);
+                transform: translateY(20px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
 
-        @media (max-width: 600px) {
-            nav {
-                padding: 22px;
-            }
+        /* RESPONSIVE DESIGN */
 
-            .logo {
-                font-size: 21px;
+        @media (max-width: 850px) {
+            nav {
+                padding: 18px 5%;
+                align-items: flex-start;
             }
 
             .nav-links {
-                gap: 14px;
+                justify-content: flex-end;
+                gap: 12px 18px;
             }
 
-            .nav-links a {
-                font-size: 11px;
+            .project-content {
+                grid-template-columns: 1fr;
             }
 
-            h1 {
-                font-size: clamp(48px, 12vw, 70px);
-                letter-spacing: -3px;
+            .team-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
             }
 
-            .tagline {
-                font-size: 11px;
-                letter-spacing: 4px;
-            }
-
-            .description {
-                font-size: 15px;
-            }
-
-            .button {
-                padding: 15px 25px;
+            .profile-content {
+                grid-template-columns: 220px 1fr;
+                gap: 28px;
             }
         }
 
-        @media (max-width: 380px) {
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+                align-items: center;
+                gap: 14px;
+                padding: 16px;
+            }
+
+            .logo {
+                font-size: 22px;
+            }
+
             .nav-links {
-                gap: 9px;
+                width: 100%;
+                justify-content: center;
+                gap: 10px 18px;
             }
 
             .nav-links a {
+                font-size: 12px;
+            }
+
+            .hero {
+                min-height: 78vh;
+                padding: 65px 22px;
+            }
+
+            h1 {
+                font-size: clamp(43px, 12vw, 65px);
+                letter-spacing: -2.5px;
+            }
+
+            .tagline {
                 font-size: 10px;
+                letter-spacing: 3px;
+            }
+
+            .hero-description {
+                font-size: 14px;
+            }
+
+            .section {
+                padding: 65px 20px;
+            }
+
+            .section-heading {
+                margin-bottom: 30px;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+                max-width: 380px;
+            }
+
+            .member-photo {
+                height: 300px;
+            }
+
+            .member-bio {
+                min-height: 0;
+            }
+
+            .profile-section {
+                padding: 60px 22px;
+            }
+
+            .profile-content {
+                grid-template-columns: 1fr;
+                gap: 25px;
+                max-width: 420px;
+            }
+
+            .profile-photo {
+                max-width: 260px;
+                aspect-ratio: 4 / 4;
+                margin: auto;
+            }
+
+            .profile-details {
+                text-align: center;
+            }
+
+            .project-description,
+            .goal-card {
+                padding: 25px;
+            }
+
+            .application {
+                padding: 75px 22px;
             }
         }
     </style>
 </head>
 
 <body>
-    <section class="hero" id="home">
 
-        <nav>
-            <div class="logo">My<span>Site.</span></div>
+    <!-- NAVIGATION -->
+    <nav>
+        <a href="#home" class="logo" style="text-decoration: none; color: white;">
+            Our<span class="gradient-text">Team.</span>
+        </a>
 
-            <div class="nav-links">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#projects">Projects</a>
-                <a href="#contact">Contact</a>
-            </div>
-        </nav>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">Our Project</a>
+            <a href="#team">Our Team</a>
+            <a href="#member1">Member 1</a>
+            <a href="#member2">Member 2</a>
+            <a href="#member3">Member 3</a>
+            <a href="#application">Application</a>
+        </div>
+    </nav>
 
-        <main class="welcome">
-            <p class="tagline">HELLO THERE</p>
+    <!-- HOME / HERO -->
+    <header class="hero" id="home">
+        <div class="hero-content">
+            <p class="tagline">THREE MEMBERS. ONE VISION.</p>
 
-            <h1>Welcome<span>!</span></h1>
+            <h1>Meet Our<br><span>Team.</span></h1>
 
-            <p class="description">
-                Thanks for visiting my page. I'm excited to share
-                my work, my journey, and the things I'm passionate about.
-                Take a look around and discover something new.
+            <p class="hero-description">
+                Welcome to our team portfolio! We are a group of three
+                students working together to turn our ideas into a meaningful
+                project. Get to know our members, discover our goals, and
+                explore what we have created together.
             </p>
 
-            <a href="#about" class="button">
-                Explore More <span>→</span>
+            <a href="#team" class="button">
+                Meet the Members <span>→</span>
             </a>
-        </main>
+        </div>
+    </header>
 
-        <div class="bottom-text">
-            &copy; 2026 MYSITE. ALL RIGHTS RESERVED.
+    <!-- ABOUT THE PROJECT -->
+    <section class="section about" id="about">
+        <div class="section-heading">
+            <p class="section-label">WHAT WE DO</p>
+
+            <h2>About Our <span class="gradient-text">Project</span></h2>
+
+            <p>
+                Learn about the idea behind our project, why we created it,
+                and what we hope to accomplish.
+            </p>
         </div>
 
+        <div class="project-content">
+            <div class="project-description">
+                <h3>Our Project Overview</h3>
+
+                <p>
+                    Our project is designed to demonstrate our knowledge,
+                    creativity, and technical skills through a practical
+                    application. By combining our individual strengths,
+                    we aim to develop a useful, accessible, and easy-to-use
+                    solution.
+                </p>
+
+                <p style="margin-top: 15px;">
+                    Replace this paragraph with the actual name of your
+                    application, the problem it addresses, and a brief
+                    explanation of how it works.
+                </p>
+            </div>
+
+            <div class="goal-card">
+                <div class="goal-icon">✦</div>
+
+                <h3>Our Goal</h3>
+
+                <p>
+                    Our goal is to apply what we have learned, strengthen
+                    our teamwork and problem-solving skills, and build an
+                    application that meets the needs of its intended users.
+                </p>
+            </div>
+        </div>
     </section>
 
-    <section id="about" style="padding: 100px 25px; text-align: center;">
-        <h2>About This Website</h2>
-        <p style="margin-top: 15px; color: #aab8d4;">
-            A little space to share ideas, creativity, and projects.
-        </p>
+    <!-- TEAM OVERVIEW -->
+    <section class="section" id="team">
+        <div class="section-heading">
+            <p class="section-label">THE PEOPLE BEHIND THE PROJECT</p>
+
+            <h2>Meet Our <span class="gradient-text">Members</span></h2>
+
+            <p>
+                Get to know the three people behind our work. Each member
+                brings their own skills, ideas, and contributions to the team.
+            </p>
+        </div>
+
+        <div class="team-grid">
+
+            <!-- MEMBER 1 -->
+            <article class="member-card">
+                <img
+                    class="member-photo"
+                    src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=700&q=85"
+                    alt="Portrait of Member One"
+                    loading="lazy"
+                >
+
+                <div class="member-info">
+                    <p class="member-number">MEMBER 01</p>
+                    <h3>Member One</h3>
+                    <p class="member-role">Team Member</p>
+
+                    <p class="member-bio">
+                        Introduce the first member here. Describe their
+                        interests, strengths, skills, and contribution
+                        to the project.
+                    </p>
+
+                    <a href="#member1" class="button-outline">
+                        View Full Profile →
+                    </a>
+                </div>
+            </article>
+
+            <!-- MEMBER 2 -->
+            <article class="member-card">
+                <img
+                    class="member-photo"
+                    src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=700&q=85"
+                    alt="Portrait of Member Two"
+                    loading="lazy"
+                >
+
+                <div class="member-info">
+                    <p class="member-number">MEMBER 02</p>
+                    <h3>Member Two</h3>
+                    <p class="member-role">Team Member</p>
+
+                    <p class="member-bio">
+                        Introduce the second member here. Explain their
+                        interests, relevant skills, and role in helping
+                        the team achieve its goals.
+                    </p>
+
+                    <a href="#member2" class="button-outline">
+                        View Full Profile →
+                    </a>
+                </div>
+            </article>
+
+            <!-- MEMBER 3 -->
+            <article class="member-card">
+                <img
+                    class="member-photo"
+                    src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=700&q=85"
+                    alt="Portrait of Member Three"
+                    loading="lazy"
+                >
+
+                <div class="member-info">
+                    <p class="member-number">MEMBER 03</p>
+                    <h3>Member Three</h3>
+                    <p class="member-role">Team Member</p>
+
+                    <p class="member-bio">
+                        Introduce the third member here. Share their
+                        background, personal strengths, and responsibilities
+                        in developing the project.
+                    </p>
+
+                    <a href="#member3" class="button-outline">
+                        View Full Profile →
+                    </a>
+                </div>
+            </article>
+
+        </div>
     </section>
 
-    <section id="projects" style="padding: 60px 25px; text-align: center;">
-        <h2>My Projects</h2>
-        <p style="margin-top: 15px; color: #aab8d4;">
-            More exciting things are coming soon.
-        </p>
+    <!-- MEMBER 1 FULL PROFILE -->
+    <section class="profile-section" id="member1">
+        <div class="profile-content">
+            <img
+                class="profile-photo"
+                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=700&q=85"
+                alt="Member One profile photo"
+                loading="lazy"
+            >
+
+            <div class="profile-details">
+                <p class="section-label">MEMBER 01</p>
+
+                <h2>Hi, I'm <span class="gradient-text">Member One.</span></h2>
+
+                <p class="member-role">Team Member</p>
+
+                <p>
+                    Write a more detailed biography here. Include your
+                    educational background, interests, technical skills,
+                    personal goals, and the responsibilities you handled
+                    while working on this project.
+                </p>
+
+                <p>
+                    You can also describe what you learned from the project
+                    and how you contributed to the team's success.
+                </p>
+
+                <a href="#team" class="button-outline">
+                    ← Back to Our Team
+                </a>
+            </div>
+        </div>
     </section>
 
-    <section id="contact" style="padding: 60px 25px; text-align: center;">
-        <h2>Contact</h2>
-        <p style="margin-top: 15px; color: #aab8d4;">
-            Thanks for stopping by!
-        </p>
+    <!-- MEMBER 2 FULL PROFILE -->
+    <section class="profile-section" id="member2">
+        <div class="profile-content">
+            <img
+                class="profile-photo"
+                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=700&q=85"
+                alt="Member Two profile photo"
+                loading="lazy"
+            >
+
+            <div class="profile-details">
+                <p class="section-label">MEMBER 02</p>
+
+                <h2>Hi, I'm <span class="gradient-text">Member Two.</span></h2>
+
+                <p class="member-role">Team Member</p>
+
+                <p>
+                    Write the second member's biography here. Include
+                    their background, interests, relevant abilities,
+                    and responsibilities in the group project.
+                </p>
+
+                <p>
+                    Highlight their individual contributions, strengths,
+                    and experience working with the other members.
+                </p>
+
+                <a href="#team" class="button-outline">
+                    ← Back to Our Team
+                </a>
+            </div>
+        </div>
     </section>
+
+    <!-- MEMBER 3 FULL PROFILE -->
+    <section class="profile-section" id="member3">
+        <div class="profile-content">
+            <img
+                class="profile-photo"
+                src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=700&q=85"
+                alt="Member Three profile photo"
+                loading="lazy"
+            >
+
+            <div class="profile-details">
+                <p class="section-label">MEMBER 03</p>
+
+                <h2>Hi, I'm <span class="gradient-text">Member Three.</span></h2>
+
+                <p class="member-role">Team Member</p>
+
+                <p>
+                    Write the third member's biography here. Describe their
+                    interests, educational background, strengths, and role
+                    in planning or developing the application.
+                </p>
+
+                <p>
+                    Explain their contributions and what they gained
+                    from collaborating on the project.
+                </p>
+
+                <a href="#team" class="button-outline">
+                    ← Back to Our Team
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN JAVASCRIPT APPLICATION -->
+    <section class="application" id="application">
+        <div class="application-content">
+            <p class="section-label">READY TO EXPLORE?</p>
+
+            <h2>Discover Our <span class="gradient-text">Application.</span></h2>
+
+            <p>
+                Learn more about our work by trying the main application.
+                Click below to access the project we developed as a team.
+            </p>
+
+            <!-- Change app.html to your actual application filename -->
+            <a href="app.html" class="button">
+                Launch Main Application <span>→</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 OUR TEAM. ALL RIGHTS RESERVED.</p>
+        <p style="margin-top: 8px;">
+            Designed and developed by our team.
+        </p>
+    </footer>
+
 </body>
 </html>
