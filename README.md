@@ -1,7 +1,7 @@
-# 🌱 AgroETech
+# 🌱 AgroTech
 ### Smart Weather Monitoring for Safer Harvests
 
-**AgroETech** is a web-based agricultural weather monitoring platform designed to help farmers stay informed about local weather conditions and make better decisions to protect their crops. By providing accessible weather forecasts and farming-related advisories, the project aims to support smarter farm management and promote agricultural awareness through technology.
+**AgroTech** is a web-based agricultural weather monitoring platform designed to help farmers stay informed about local weather conditions and make better decisions to protect their crops. By providing accessible weather forecasts and farming-related advisories, the project aims to support smarter farm management and promote agricultural awareness through technology.
 
 ## 📖 About the Project
 
@@ -51,7 +51,8 @@ Weather data is intended for informational purposes and should not replace offic
 
 ```text
 AgroETech/
-├── index.html       # Main webpage
+├── index.html       # Main webpage 
+├── app.html         # Website user interface
 ├── style.css        # Website styling and responsive layout
 ├── script.js        # Weather API integration and interactivity
 └── README.md        # Project documentation
