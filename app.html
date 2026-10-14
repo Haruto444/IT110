@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>FarmCast | Weather tracking</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Public+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="styles.css">
+  </head>
+
+  <body>
+    <div class="wrap">
+      <header>
+        <a class="logo" href="#top"><i></i>FarmCast</a>
+        <nav>
+          <a href="#current">Current</a>
+          <a href="#forecast">Forecast</a>
+          <a href="#alerts">Alerts</a>
+          <button class="theme" id="theme" aria-label="Toggle light or dark theme">Theme</button>
+        </nav>
+      </header>
+
+      <main id="top">
+        <div class="hero">
+          <div>
+            <h1>Know the weather before you work the field.</h1>
+            <p class="lead">
+              Weather reader. FarmCast tells you when to spray, field by field.
+            </p>
+            <div class="cta">
+              <a class="btn ghost" href="#forecast" style="text-decoration: none">See forecast</a>
+            </div>
+          </div>
+        </div>
+
+        <section id="location">
+          <div class="wrap slide">
+            <div class="panel">
+              <div class="panel-top">
+                <strong>Your farm</strong>
+                <div class="fields" id="fields" role="group" aria-label="Choose a field"></div>
+              </div>
+              <div class="loc">
+                <button class="btn" id="locate">Use my location</button>
+                
+                <button class="chip" id="pin" hidden>Pin as field</button>
+                <button class="chip" id="unpin" hidden>Remove field</button>
+                <span id="status" role="status"></span>
+              </div>
+            </div>
+            <div class="copy">
+              <h2>Location</h2>
+              <p class="sub">Farm setup</p>
+              <ul class="pts">
+                <li>Use your current location</li>
+                <li>Pin each field and switch between them</li>
+                <li>Switch between °C and °F</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section id="current">
+          <div class="wrap slide">
+            <div class="panel" aria-live="polite">
+              <div class="today">
+                <div>
+                  <small id="place"></small>
+                  <div class="big" id="big"></div>
+                  <div class="line" id="line"></div>
+                </div>
+                <div class="icon" id="icon" aria-hidden="true"></div>
+              </div>
+              <div class="now" id="now"></div>
+              <p class="upd" id="upd"></p>
+            </div>
+            <div class="copy">
+              <h2>Current weather</h2>
+              <p class="sub">Right now on the farm</p>
+              <ul class="pts">
+                <li>Temperature and feels like</li>
+                <li>Wind speed</li>
+                <li>UV index</li>
+                <li>Last updated time</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section id="forecast">
+          <div class="wrap" style="padding: 0">
+            <div class="slide">
+              <div class="panel">
+                <h3 class="mini" style="margin-top: 0">Hourly forecast</h3>
+                <div class="hourly" id="hourly"></div>
+                <h3 class="mini">Spray window</h3>
+                <div class="verdict" id="verdict"></div>
+                <div class="hours" id="hours" aria-label="Hourly spray suitability"></div>
+                <div class="hours-lab">
+                  <span>6 am</span>
+                  <span>12 pm</span>
+                  <span>8 pm</span>
+                </div>
+                <p class="key" id="key"></p>
+              </div>
+              <div class="copy">
+                <h2>Forecast dashboard</h2>
+                <p class="sub">Weather planning</p>
+                <ul class="pts">
+                  <li>Hourly forecast</li>
+                  <li>7-day forecast</li>
+                  <li>Rainfall probability and amount</li>
+                  <li>Daily high and low temperatures</li>
+                </ul>
+              </div>
+            </div>
+            <div id="week" style="margin-top: 32px">
+              <h3 class="mini">7-day forecast</h3>
+              <div class="week" id="week-grid"></div>
+            </div>
+          </div>
+        </section>
+
+        <section id="alerts">
+          <div class="wrap slide">
+            <div class="panel">
+              <strong id="alert-for">Alerts</strong>
+              <div id="alerts-list"></div>
+            </div>
+            <div class="copy">
+              <h2>Farming weather alerts</h2>
+              <p class="sub">Crop protection</p>
+              <ul class="pts">
+                <li>Heavy rain warnings</li>
+                <li>Strong wind and spray drift</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <noscript>
+          <p style="padding: 12px; background: #b5472e; color: #fff;">
+            JavaScript is turned off here, so the weather cannot load. Open this page in Chrome or
+            another full browser.
+          </p>
+        </noscript>
+        <script src="script.js"></script>
+      </main>
+    </div>
+  </body>
+</html>
