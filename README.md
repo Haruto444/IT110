@@ -1,7 +1,7 @@
-# 🌱 AgroTech
+# 🌱 FarmCast
 ### Smart Weather Monitoring for Safer Harvests
 
-**AgroTech** is a web-based agricultural weather monitoring platform designed to help farmers stay informed about local weather conditions and make better decisions to protect their crops. By providing accessible weather forecasts and farming-related advisories, the project aims to support smarter farm management and promote agricultural awareness through technology.
+**FarmCast** is a web-based agricultural weather monitoring platform designed to help farmers stay informed about local weather conditions and make better decisions to protect their crops. By providing accessible weather forecasts and farming-related advisories, the project aims to support smarter farm management and promote agricultural awareness through technology.
 
 ## 📖 About the Project
 
@@ -41,7 +41,7 @@ AgroETech aims to make weather information easier for farmers to understand by p
 
 ## 🌦️ Weather Data Source
 
-AgroETech uses the [Open-Meteo Weather API](https://open-meteo.com/en/docs) to retrieve weather information.
+FarmCast uses the [Open-Meteo Weather API](https://open-meteo.com/en/docs) to retrieve weather information.
 
 Open-Meteo provides weather forecast data without requiring an API key for its free, non-commercial service. Please refer to its official documentation and terms for usage limits and attribution requirements.
 
@@ -80,7 +80,7 @@ git clone <GITHUB_REPOSITORY_URL>
 **2. Open the project folder**
 
 ```bash
-cd AgroETech
+cd FarmCast
 ```
 
 **3. Open the website**
