@@ -7,7 +7,7 @@
 
 Weather conditions play an important role in agriculture. Heavy rainfall, strong winds, extreme temperatures, and dry periods can affect crop growth, irrigation, and other farming activities.
 
-AgroETech aims to make weather information easier for farmers to understand by presenting essential weather data in a simple, accessible, and user-friendly interface. The platform will use a free weather API to retrieve weather information and provide general recommendations based on forecast conditions.
+FarmCast aims to make weather information easier for farmers to understand by presenting essential weather data in a simple, accessible, and user-friendly interface. The platform will use a free weather API to retrieve weather information and provide general recommendations based on forecast conditions.
 
 ## 🎯 Objectives
 
@@ -93,7 +93,7 @@ Once the weather API integration is implemented, select a location to view its w
 
 ## 👥 Development Team
 
-AgroETech is a collaborative academic project developed by students as part of their IT coursework.
+FarmCast is a collaborative academic project developed by students as part of their IT coursework.
 
 - **Dirk Sean P. Malicay** — Javascript
 - **Rheyan Erroa** — HTML
@@ -102,11 +102,11 @@ AgroETech is a collaborative academic project developed by students as part of t
 
 ## 🎓 Project Purpose
 
-This project demonstrates how web development and publicly available weather data can be applied to a real-world agricultural concern. AgroETech aims to make weather information more accessible to farmers and encourage informed decisions that may help reduce weather-related risks to crops.
+This project demonstrates how web development and publicly available weather data can be applied to a real-world agricultural concern. FarmCast aims to make weather information more accessible to farmers and encourage informed decisions that may help reduce weather-related risks to crops.
 
 ## ⚠️ Disclaimer
 
-AgroETech is an educational project and is not an official weather forecasting or emergency alert service. Weather-based advisories are general suggestions, not guarantees of crop safety. Users should consult official weather bulletins from [PAGASA](https://www.pagasa.dost.gov.ph/) and follow relevant local agricultural guidance when making important farming decisions.
+FarmCast is an educational project and is not an official weather forecasting or emergency alert service. Weather-based advisories are general suggestions, not guarantees of crop safety. Users should consult official weather bulletins from [PAGASA](https://www.pagasa.dost.gov.ph/) and follow relevant local agricultural guidance when making important farming decisions.
 
 ## 📄 License
 
@@ -114,4 +114,4 @@ This project is developed for educational purposes. A formal open-source license
 
 ---
 
-**AgroETech — Growing Smarter with Weather Technology. 🌾**
+**FarmCast — Growing Smarter with Weather Technology. 🌾**
