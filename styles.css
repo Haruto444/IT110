@@ -214,6 +214,7 @@ body.dark .hero::after {
 .hero h1 { max-width: 15ch; font-size: clamp(2.3rem, 6vw, 4rem); font-weight: 800; }
 .lead { max-width: 44ch; color: var(--muted); font-size: 1.15rem; }
 body:not(.dark) .hero .lead { color: #4a5651; }
+body.dark .hero .lead { color: #dfe8ee; }
 .cta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
 
 /* ---------- 6. Buttons and chips ---------- */
@@ -338,9 +339,10 @@ small { color: var(--muted); font-size: 0.95rem; }
   line-height: 1;
 }
 
+/* four small cards: Humidity, Wind, Rain, UV Index */
 .now {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 10px;
   margin-top: 20px;
 }
