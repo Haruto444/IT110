@@ -50,7 +50,7 @@ Weather data is intended for informational purposes and should not replace offic
 ## 📁 Project Structure
 
 ```text
-AgroETech/
+FarmCast/
 ├── index.html       # Main webpage 
 ├── app.html         # Website user interface
 ├── style.css        # Website styling and responsive layout
