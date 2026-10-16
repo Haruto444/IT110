@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Our Team | Portfolio</title>
+    <title>FarmCast | Portfolio</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -24,8 +23,8 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background: #080e20;
-            color: white;
+            background: #F8F6F2;
+            color: #4B5D4F;
             min-height: 100vh;
             line-height: 1.6;
         }
@@ -39,8 +38,8 @@
             justify-content: space-between;
             align-items: center;
             gap: 20px;
-            background: rgba(8, 14, 32, 0.95);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(75, 93, 79, 0.97);
+            border-bottom: 1px solid rgba(183, 196, 186, 0.2);
             position: sticky;
             top: 0;
             z-index: 100;
@@ -52,10 +51,12 @@
             font-weight: 800;
             letter-spacing: -1px;
             white-space: nowrap;
+            color: #F8F6F2;
+            text-decoration: none;
         }
 
         .logo span {
-            color: #48c6ff;
+            color: #E0A982;
         }
 
         .nav-links {
@@ -65,7 +66,7 @@
         }
 
         .nav-links a {
-            color: #dce5fa;
+            color: #B7C4BA;
             text-decoration: none;
             font-size: 13px;
             font-weight: 500;
@@ -73,7 +74,7 @@
         }
 
         .nav-links a:hover {
-            color: #48c6ff;
+            color: #E0A982;
         }
 
         /* HERO SECTION */
@@ -87,8 +88,8 @@
             padding: 90px 24px;
             background:
                 linear-gradient(
-                    rgba(5, 12, 30, 0.55),
-                    rgba(5, 12, 30, 0.82)
+                    rgba(75, 93, 79, 0.55),
+                    rgba(47, 107, 143, 0.75)
                 ),
                 url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=2000&q=85')
                 center / cover no-repeat;
@@ -100,7 +101,7 @@
         }
 
         .tagline {
-            color: #65caff;
+            color: #E0A982;
             font-size: 12px;
             font-weight: 700;
             letter-spacing: 5px;
@@ -113,11 +114,12 @@
             letter-spacing: -4px;
             line-height: 1.1;
             margin-bottom: 25px;
+            color: #F8F6F2;
         }
 
         h1 span,
         .gradient-text {
-            background: linear-gradient(90deg, #45caff, #a879ff);
+            background: linear-gradient(90deg, #E0A982, #D95F2B);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -126,7 +128,7 @@
         .hero-description {
             max-width: 650px;
             margin: 0 auto 32px;
-            color: #e0e8ff;
+            color: #ECE8E1;
             font-size: 16px;
             line-height: 1.9;
         }
@@ -138,18 +140,18 @@
             gap: 12px;
             padding: 15px 26px;
             border-radius: 50px;
-            background: linear-gradient(100deg, #20b9f4, #3975ff);
-            color: white;
+            background: linear-gradient(100deg, #D95F2B, #E0A982);
+            color: #F8F6F2;
             text-decoration: none;
             font-size: 14px;
             font-weight: 600;
-            box-shadow: 0 8px 30px rgba(39, 140, 255, 0.25);
+            box-shadow: 0 8px 30px rgba(217, 95, 43, 0.3);
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .button:hover {
             transform: translateY(-4px);
-            box-shadow: 0 12px 35px rgba(39, 140, 255, 0.4);
+            box-shadow: 0 12px 35px rgba(217, 95, 43, 0.45);
         }
 
         .button span {
@@ -161,9 +163,9 @@
             justify-content: center;
             align-items: center;
             padding: 12px 20px;
-            border: 1px solid #48c6ff;
+            border: 1px solid #2F6B8F;
             border-radius: 30px;
-            color: #65caff;
+            color: #2F6B8F;
             text-decoration: none;
             font-size: 13px;
             font-weight: 600;
@@ -171,8 +173,8 @@
         }
 
         .button-outline:hover {
-            background: #48c6ff;
-            color: #080e20;
+            background: #2F6B8F;
+            color: #F8F6F2;
         }
 
         /* GENERAL SECTIONS */
@@ -188,7 +190,7 @@
         }
 
         .section-label {
-            color: #65caff;
+            color: #D95F2B;
             font-size: 11px;
             font-weight: 700;
             letter-spacing: 4px;
@@ -200,10 +202,12 @@
             font-weight: 800;
             letter-spacing: -1.5px;
             margin-bottom: 15px;
+            color: #4B5D4F;
         }
 
         .section-heading p {
-            color: #aab8d4;
+            color: #4B5D4F;
+            opacity: 0.8;
             font-size: 15px;
             line-height: 1.8;
         }
@@ -211,7 +215,7 @@
         /* ABOUT THE PROJECT */
 
         .about {
-            background: #0b1329;
+            background: #ECE8E1;
         }
 
         .project-content {
@@ -226,20 +230,22 @@
         .project-description,
         .goal-card {
             padding: 32px;
-            border: 1px solid rgba(255, 255, 255, 0.09);
+            border: 1px solid rgba(75, 93, 79, 0.12);
             border-radius: 20px;
-            background: rgba(255, 255, 255, 0.035);
+            background: #F8F6F2;
         }
 
         .project-description h3,
         .goal-card h3 {
             font-size: 21px;
             margin-bottom: 15px;
+            color: #4B5D4F;
         }
 
         .project-description p,
         .goal-card p {
-            color: #aab8d4;
+            color: #4B5D4F;
+            opacity: 0.85;
             font-size: 14px;
             line-height: 1.9;
         }
@@ -247,8 +253,8 @@
         .goal-card {
             background: linear-gradient(
                 145deg,
-                rgba(32, 185, 244, 0.1),
-                rgba(168, 121, 255, 0.1)
+                rgba(183, 196, 186, 0.4),
+                rgba(224, 169, 130, 0.25)
             );
         }
 
@@ -268,8 +274,8 @@
         }
 
         .member-card {
-            background: #101a34;
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: #F8F6F2;
+            border: 1px solid rgba(75, 93, 79, 0.12);
             border-radius: 20px;
             overflow: hidden;
             transition: transform 0.3s, border-color 0.3s;
@@ -277,7 +283,7 @@
 
         .member-card:hover {
             transform: translateY(-7px);
-            border-color: rgba(72, 198, 255, 0.6);
+            border-color: rgba(217, 95, 43, 0.5);
         }
 
         .member-photo {
@@ -285,7 +291,7 @@
             height: 260px;
             display: block;
             object-fit: cover;
-            background: #172541;
+            background: #B7C4BA;
         }
 
         .member-info {
@@ -293,7 +299,7 @@
         }
 
         .member-number {
-            color: #65caff;
+            color: #D95F2B;
             font-size: 11px;
             font-weight: 700;
             letter-spacing: 2px;
@@ -303,10 +309,11 @@
         .member-info h3 {
             font-size: 22px;
             margin-bottom: 10px;
+            color: #4B5D4F;
         }
 
         .member-role {
-            color: #b49aff;
+            color: #2F6B8F;
             font-size: 12px;
             font-weight: 600;
             margin-bottom: 15px;
@@ -314,7 +321,8 @@
 
         .member-bio {
             min-height: 100px;
-            color: #aab8d4;
+            color: #4B5D4F;
+            opacity: 0.85;
             font-size: 13px;
             line-height: 1.8;
             margin-bottom: 22px;
@@ -328,8 +336,8 @@
 
         .profile-section {
             padding: 80px 6%;
-            background: #0b1329;
-            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            background: #ECE8E1;
+            border-top: 1px solid rgba(75, 93, 79, 0.1);
         }
 
         .profile-content {
@@ -346,17 +354,19 @@
             aspect-ratio: 4 / 5;
             object-fit: cover;
             border-radius: 20px;
-            border: 1px solid rgba(72, 198, 255, 0.3);
+            border: 1px solid rgba(47, 107, 143, 0.35);
         }
 
         .profile-details h2 {
             font-size: clamp(30px, 5vw, 42px);
             line-height: 1.2;
             margin-bottom: 12px;
+            color: #4B5D4F;
         }
 
         .profile-details p {
-            color: #aab8d4;
+            color: #4B5D4F;
+            opacity: 0.85;
             font-size: 14px;
             line-height: 1.9;
             margin-bottom: 20px;
@@ -374,10 +384,10 @@
             background:
                 radial-gradient(
                     ellipse at top,
-                    rgba(45, 101, 200, 0.22),
+                    rgba(183, 196, 186, 0.45),
                     transparent 65%
                 ),
-                #080e20;
+                #F8F6F2;
         }
 
         .application-content {
@@ -389,10 +399,12 @@
             font-size: clamp(32px, 6vw, 48px);
             line-height: 1.2;
             margin-bottom: 20px;
+            color: #4B5D4F;
         }
 
         .application p {
-            color: #aab8d4;
+            color: #4B5D4F;
+            opacity: 0.85;
             font-size: 15px;
             line-height: 1.9;
             margin-bottom: 30px;
@@ -403,8 +415,8 @@
         footer {
             padding: 25px;
             text-align: center;
-            background: #060b18;
-            color: #8492af;
+            background: #4B5D4F;
+            color: #B7C4BA;
             font-size: 11px;
             letter-spacing: 1px;
         }
@@ -548,8 +560,8 @@
 
     <!-- NAVIGATION -->
     <nav>
-        <a href="#home" class="logo" style="text-decoration: none; color: white;">
-            Our<span class="gradient-text">Team.</span>
+        <a href="#home" class="logo">
+            Farm<span>Cast</span>
         </a>
 
         <div class="nav-links">
@@ -609,9 +621,9 @@
                 </p>
 
                 <p style="margin-top: 15px;">
-                    Replace this paragraph with the actual name of your
-                    application, the problem it addresses, and a brief
-                    explanation of how it works.
+                    FarmCast is a web-based agricultural weather monitoring platform
+                    designed to help farmers stay informed about local weather conditions
+                    and make better decisions to protect their crops.
                 </p>
             </div>
 
@@ -648,8 +660,8 @@
             <article class="member-card">
                 <img
                     class="member-photo"
-                    src="https://i.ibb.co/Kx15mD9y/OMB2174-cropped-1.png" alt="OMB2174-cropped-1"
-                    alt="Portrait of Member One"
+                    src="images/dirk.png"
+                    alt="Portrait of Dirk Sean P. Malicay"
                     loading="lazy"
                 >
 
@@ -675,8 +687,8 @@
             <article class="member-card">
                 <img
                     class="member-photo"
-                    src="images/jemicah.jpg" alt="OMB2174-cropped-1"
-                    alt="Portrait of Member Two"
+                    src="images/jemicah.jpg"
+                    alt="Portrait of Jemicah Noelle P. Lapa"
                     loading="lazy"
                 >
 
@@ -686,8 +698,8 @@
                     <p class="member-role">Team Member</p>
 
                     <p class="member-bio">
-                          I am an IT student at Caraga State University. I enjoy learning
-                           new things and working with my team to build useful projects.   
+                        I am an IT student at Caraga State University. I enjoy learning
+                        new things and working with my team to build useful projects.
                     </p>
 
                     <a href="#member2" class="button-outline">
@@ -700,20 +712,20 @@
             <article class="member-card">
                 <img
                     class="member-photo"
-                    src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=700&q=85"
-                    alt="Portrait of Member Three"
+                    src="images/rheyan.jpg"
+                    alt="Portrait of Rheyan D. Erroa"
                     loading="lazy"
                 >
 
                 <div class="member-info">
                     <p class="member-number">MEMBER 03</p>
-                    <h3>Member Three</h3>
+                    <h3>Rheyan D. Erroa</h3>
                     <p class="member-role">Team Member</p>
 
                     <p class="member-bio">
-                        Introduce the third member here. Share their
-                        background, personal strengths, and responsibilities
-                        in developing the project.
+                        I am an Information Technology student at Caraga State University
+                        who is passionate about developing my skills, exploring new technologies,
+                        and contributing to meaningful projects.
                     </p>
 
                     <a href="#member3" class="button-outline">
@@ -730,8 +742,8 @@
         <div class="profile-content">
             <img
                 class="profile-photo"
-                src="https://i.ibb.co/Kx15mD9y/OMB2174-cropped-1.png" alt="OMB2174-cropped-1"
-                alt="Member One profile photo"
+                src="images/dirk.png"
+                alt="Dirk Sean P. Malicay profile photo"
                 loading="lazy"
             >
 
@@ -744,9 +756,9 @@
 
                 <p>
                     I am an Information Technology student at Caraga State University
-                    with a growing passion for programming, web development, and database management. 
-                    As I continue to develop my skills, I strive to become a more 
-                    apable and adaptable IT professional while working on this project with my team.
+                    with a growing passion for programming, web development, and database management.
+                    As I continue to develop my skills, I strive to become a more
+                    capable and adaptable IT professional while working on this project with my team.
                 </p>
 
                 <a href="#team" class="button-outline">
@@ -778,7 +790,7 @@
                     with a strong interest in web development and user-focused design.
                     I am committed to continuous learning and to building reliable,
                     well-organized solutions through teamwork.
-                </p>    
+                </p>
 
                 <p>
                     I like creating clean, simple designs and I am always improving
@@ -797,27 +809,28 @@
         <div class="profile-content">
             <img
                 class="profile-photo"
-                src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=700&q=85"
-                alt="Member Three profile photo"
+                src="images/rheyan.jpg"
+                alt="Rheyan D. Erroa profile photo"
                 loading="lazy"
             >
 
             <div class="profile-details">
                 <p class="section-label">MEMBER 03</p>
 
-                <h2>Hi, I'm <span class="gradient-text">Member Three.</span></h2>
+                <h2>Hi, I'm <span class="gradient-text">Rheyan.</span></h2>
 
                 <p class="member-role">Team Member</p>
 
                 <p>
-                    Write the third member's biography here. Describe their
-                    interests, educational background, strengths, and role
-                    in planning or developing the application.
+                    I enjoy solving problems, learning new skills, and working with others
+                    to develop creative and practical solutions. Through my academic projects,
+                    I aim to improve my technical abilities in the IT field.
                 </p>
 
                 <p>
-                    Explain their contributions and what they gained
-                    from collaborating on the project.
+                    Collaborating with my teammates helped me improve my coding skills,
+                    strengthen my problem-solving abilities, and understand the importance of
+                    communication and teamwork.
                 </p>
 
                 <a href="#team" class="button-outline">
@@ -827,7 +840,7 @@
         </div>
     </section>
 
-    <!-- MAIN JAVASCRIPT APPLICATION -->
+    <!-- MAIN APPLICATION -->
     <section class="application" id="application">
         <div class="application-content">
             <p class="section-label">READY TO EXPLORE?</p>
@@ -839,7 +852,6 @@
                 Click below to access the project we developed as a team.
             </p>
 
-            <!-- Change app.html to your actual application filename -->
             <a href="app.html" class="button">
                 Launch Main Application <span>→</span>
             </a>
@@ -848,7 +860,7 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>© 2026 OUR TEAM. ALL RIGHTS RESERVED.</p>
+        <p>© 2026 FarmCast. ALL RIGHTS RESERVED.</p>
         <p style="margin-top: 8px;">
             Designed and developed by our team.
         </p>

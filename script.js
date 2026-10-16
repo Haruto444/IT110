@@ -63,6 +63,25 @@ function setStatus(message) {
     document.getElementById("status").textContent = message;
 }
 
+function showFetchError() {
+    setStatus("Could not fetch Data. Please try again");
+    document.getElementById("big").textContent = "--";
+    document.getElementById("line").textContent = "Could not fetch Data. Please try again";
+    document.getElementById("icon").textContent = "⚠️";
+    document.getElementById("now").innerHTML = "";
+    document.getElementById("hourly").innerHTML = "";
+    document.getElementById("week-grid").innerHTML = "";
+    document.getElementById("hours").innerHTML = "";
+    document.getElementById("verdict").textContent = "";
+    document.getElementById("key").textContent = "";
+    document.getElementById("alerts-list").innerHTML = "";
+    document.getElementById("upd").textContent = "";
+}
+
+/**
+ * Fetch weather data from Open-Meteo using the Fetch API + async/await.
+ * Handles network failures, non-OK responses, and invalid JSON.
+ */
 async function getWeather(latitude, longitude) {
     const params = new URLSearchParams({
         latitude: latitude,
@@ -105,18 +124,32 @@ async function getWeather(latitude, longitude) {
         forecast_days: "7"
     });
 
-    try {
-        const response = await fetch(`${API_URL}?${params}`);
-
-        if (!response.ok) {
-            throw new Error(`Weather request failed: ${response.status}`);
-        }
-
-        return await response.json();
-    } catch (error) {
-        console.error("Weather error:", error);
-        return null;
+    // Offline / no internet
+    if (!navigator.onLine) {
+        throw new Error("No internet connection");
     }
+
+    const response = await fetch(`${API_URL}?${params}`);
+
+    // API request failed (4xx / 5xx)
+    if (!response.ok) {
+        throw new Error(`Weather request failed: ${response.status}`);
+    }
+
+    // Parse JSON safely
+    let data;
+    try {
+        data = await response.json();
+    } catch (parseError) {
+        throw new Error("Invalid JSON response from API");
+    }
+
+    // Basic structure check
+    if (!data || !data.current || !data.hourly || !data.daily) {
+        throw new Error("Incomplete weather data received");
+    }
+
+    return data;
 }
 
 async function loadField(field) {
@@ -126,24 +159,27 @@ async function loadField(field) {
     document.getElementById("place").textContent = field.name;
     document.getElementById("big").textContent = "--";
     document.getElementById("line").textContent = "Getting the latest forecast...";
+    document.getElementById("icon").textContent = "⏳";
 
-    const data = await getWeather(field.latitude, field.longitude);
+    try {
+        const data = await getWeather(field.latitude, field.longitude);
 
-    if (!data) {
-        setStatus("Unable to load weather. Check your internet connection.");
-        return;
+        weatherData = data;
+
+        // Dynamically update the DOM with results
+        displayCurrentWeather(data, field);
+        displayHourlyForecast(data);
+        displayWeeklyForecast(data);
+        displaySprayWindow(data);
+        displayAlerts(data, field);
+
+        setStatus("Weather updated successfully.");
+        renderFields();
+    } catch (error) {
+        console.error("Weather fetch error:", error);
+        weatherData = null;
+        showFetchError();
     }
-
-    weatherData = data;
-
-    displayCurrentWeather(data, field);
-    displayHourlyForecast(data);
-    displayWeeklyForecast(data);
-    displaySprayWindow(data);
-    displayAlerts(data, field);
-
-    setStatus("Weather updated successfully.");
-    renderFields();
 }
 
 function displayCurrentWeather(data, field) {
@@ -270,7 +306,6 @@ function displayWeeklyForecast(data) {
 }
 
 function isSpraySuitable(rainChance, windSpeed, temperature) {
-    // These are example screening thresholds, not pesticide label rules.
     return rainChance < 30 &&
         windSpeed < 15 &&
         temperature >= 10 &&
@@ -295,7 +330,6 @@ function displaySprayWindow(data) {
 
     let suitableHours = 0;
 
-    // Display the next 15 hours as a simple suitability timeline.
     for (let i = startIndex; i < Math.min(startIndex + 15, hourly.time.length); i++) {
         const rainChance = hourly.precipitation_probability[i] ?? 0;
         const windSpeed = hourly.wind_speed_10m[i];
@@ -402,7 +436,7 @@ function renderFields() {
 
     const allFields = [defaultField, ...fields];
 
-    allFields.forEach((field, index) => {
+    allFields.forEach((field) => {
         const button = document.createElement("button");
         button.className = "chip";
         button.textContent = field.name;
